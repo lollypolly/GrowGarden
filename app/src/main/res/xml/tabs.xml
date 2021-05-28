@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        drawable="@drawable/ic_home"
+        text="@string/home" />
+    <tab
+        drawable="@drawable/ic_add_plant"
+        text="@string/add_plant" />
+    <tab
+        drawable="@drawable/ic_settings"
+        text="@string/settings" />
+</tabs>

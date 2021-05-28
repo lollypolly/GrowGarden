@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateFlowerActivity">
+
+    <ImageView
+        android:id="@+id/back_img"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/flower_img"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/flower"
+        app:layout_constraintBottom_toBottomOf="@id/back_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/back_img" />
+
+    <ImageView
+        android:id="@+id/add_img_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/back_for_fab"
+        android:padding="20dp"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintBottom_toBottomOf="@id/flower_img"
+        app:layout_constraintEnd_toEndOf="@id/flower_img" />
+
+    <EditText
+        android:id="@+id/name_flower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="start"
+        android:hint="Name"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_info" />
+
+    <TextView
+        android:id="@+id/label_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Plant Information"
+        android:textColor="@color/sec_color"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_img" />
+
+    <TextView
+        android:id="@+id/loc_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Location"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_flower" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/loc_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/loc_label"
+        app:layout_constraintTop_toTopOf="@id/loc_label">
+
+        <RadioButton
+            android:id="@+id/indoor_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Indoor" />
+
+        <RadioButton
+            android:id="@+id/outdoor_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Outdoor" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/about_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="About"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/loc_label"
+        app:layout_constraintTop_toBottomOf="@id/radio_group" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/about_multy_tv"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/multy_border"
+        android:gravity="top"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/about_label"
+        app:layout_constraintTop_toTopOf="@id/about_label" />
+
+    <TextView
+        android:id="@+id/care_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Care Options"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/about_label"
+        app:layout_constraintTop_toBottomOf="@id/about_multy_tv" />
+
+    <ImageView
+        android:id="@+id/option_up_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/care_option"
+        app:layout_constraintStart_toStartOf="@id/care_label"
+        app:layout_constraintTop_toBottomOf="@id/care_label"
+        tools:targetApi="m" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/option_up_1"
+        app:layout_constraintEnd_toEndOf="@id/option_up_1"
+        app:layout_constraintStart_toStartOf="@id/option_up_1"
+        app:layout_constraintTop_toTopOf="@id/option_up_1" />
+
+    <ImageView
+        android:id="@+id/option_up_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/care_option"
+        app:layout_constraintStart_toEndOf="@id/option_up_1"
+        app:layout_constraintTop_toBottomOf="@id/care_label"
+        tools:targetApi="m" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/option_up_2"
+        app:layout_constraintEnd_toEndOf="@id/option_up_2"
+        app:layout_constraintStart_toStartOf="@id/option_up_2"
+        app:layout_constraintTop_toTopOf="@id/option_up_2" />
+
+    <ImageView
+        android:id="@+id/option_up_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ripple"
+        android:src="@drawable/care_option"
+        app:layout_constraintStart_toEndOf="@id/option_up_2"
+        app:layout_constraintTop_toBottomOf="@id/care_label"
+        tools:targetApi="m" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/option_up_3"
+        app:layout_constraintEnd_toEndOf="@id/option_up_3"
+        app:layout_constraintStart_toStartOf="@id/option_up_3"
+        app:layout_constraintTop_toTopOf="@id/option_up_3" />
+
+    <Button
+        android:id="@+id/add_flower_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/back_add_btn"
+        android:gravity="center"
+        android:text="Add Flower"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/about_multy_tv"
+        app:layout_constraintStart_toStartOf="@id/about_label"
+        app:layout_constraintTop_toBottomOf="@id/option_up_1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
